@@ -39,7 +39,7 @@
     </RelativeLayout>
 
     <!-- Orta Kısım (Y ekseninde kaydırılabilir) -->
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/top_section">
@@ -54,14 +54,14 @@
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:scrollbars="none"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/btnAkademikTakvim"
@@ -192,12 +192,12 @@
                 android:id="@+id/yakinEtkinliklerBaslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yakın Etkinlikler"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginStart="16dp" />
+                android:text="Yakın Etkinlikler"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <include layout="@layout/card_event" />
 
@@ -208,6 +208,6 @@
                 android:layout_weight="1"
                 android:padding="1dp" />
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>
