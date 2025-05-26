@@ -61,8 +61,7 @@
                 android:gravity="center"
                 android:text="Finans ve Stratejide Liderlik"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="13sp" />
         </LinearLayout>
 
     </LinearLayout>

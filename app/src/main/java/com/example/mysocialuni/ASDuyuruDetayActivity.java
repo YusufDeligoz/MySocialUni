@@ -5,10 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ASDuyuruDetayActivity extends Activity {
-
+    private ImageView ivDuyuruResim;
     private TextView tvBaslik, tvAciklama, tvTarih;
     private Button btnVazgec;
 
@@ -17,25 +18,27 @@ public class ASDuyuruDetayActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.as_duyuru_detail);
 
+        // View'ları bağla
+        ivDuyuruResim = findViewById(R.id.ivDuyuruResim);
         tvBaslik = findViewById(R.id.tvBaslik);
-        tvAciklama = findViewById(R.id.tvAciklama);
+        tvAciklama = findViewById(R.id.tvBaslikHaber);
         tvTarih = findViewById(R.id.tvTarih);
         btnVazgec = findViewById(R.id.btnVazgec);
 
+        // Intent'ten verileri al
         Intent intent = getIntent();
-        String baslik = intent.getStringExtra("baslik");
-        String aciklama = intent.getStringExtra("aciklama");
-        String tarih = intent.getStringExtra("tarih");
+        tvBaslik.setText(intent.getStringExtra("baslik"));
+        tvAciklama.setText(intent.getStringExtra("aciklama"));
+        tvTarih.setText(intent.getStringExtra("gun") + " " + intent.getStringExtra("ay"));
 
-        tvBaslik.setText(baslik);
-        tvAciklama.setText(aciklama);
-        tvTarih.setText(tarih);
+        // Resim kontrolü
+        int resimId = intent.getIntExtra("resimId", -1);
+        if (resimId != -1) {
+            ivDuyuruResim.setImageResource(resimId);
+            ivDuyuruResim.setVisibility(View.VISIBLE);
+        }
 
-        btnVazgec.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish(); // Ana sayfaya geri dön
-            }
-        });
+        // Geri butonu
+        btnVazgec.setOnClickListener(v -> finish());
     }
 }

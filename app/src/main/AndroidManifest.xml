@@ -55,6 +55,7 @@
         <activity android:name=".ASKulüplerActivity" />
         <activity android:name=".ASTanıtımActivity" />
         <activity android:name=".ASDuyuruDetayActivity" />
+        <activity android:name=".ASHaberDetayActivity" />
 
         <activity
             android:name=".MainActivity"

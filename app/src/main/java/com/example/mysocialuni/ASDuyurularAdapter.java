@@ -6,13 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
 
 public class ASDuyurularAdapter extends RecyclerView.Adapter<ASDuyurularAdapter.ViewHolder> {
-
     private List<ASDuyurularModel> duyuruList;
     private Context context;
 
@@ -33,14 +30,14 @@ public class ASDuyurularAdapter extends RecyclerView.Adapter<ASDuyurularAdapter.
     }
 
     @Override
-    public ASDuyurularAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.as_duyurular_card, parent, false);
-        return new ASDuyurularAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ASDuyurularAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         ASDuyurularModel duyuru = duyuruList.get(position);
         holder.gunTextView.setText(duyuru.getGun());
         holder.ayTextView.setText(duyuru.getAy());
@@ -52,6 +49,7 @@ public class ASDuyurularAdapter extends RecyclerView.Adapter<ASDuyurularAdapter.
             intent.putExtra("ay", duyuru.getAy());
             intent.putExtra("baslik", duyuru.getBaslik());
             intent.putExtra("aciklama", duyuru.getAciklama());
+            intent.putExtra("resimId", duyuru.getResimId()); // Resim ID'sini ekle
             context.startActivity(intent);
         });
     }

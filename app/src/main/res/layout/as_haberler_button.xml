@@ -41,7 +41,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/ust_baslik_alani"
-
         android:padding="16dp">
 
         <LinearLayout

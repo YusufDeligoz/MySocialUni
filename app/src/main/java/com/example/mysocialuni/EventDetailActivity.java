@@ -23,7 +23,7 @@ public class EventDetailActivity extends AppCompatActivity {
         tvBaslik = findViewById(R.id.tvBaslik);
         tvGun = findViewById(R.id.tvGun);
         tvAy = findViewById(R.id.tvAy);
-        tvAciklama = findViewById(R.id.tvAciklama);
+        tvAciklama = findViewById(R.id.tvBaslikHaber);
         tvKulup = findViewById(R.id.tvKulup);
         tvSaat = findViewById(R.id.tvSaat);
         ivEtkinlikResmi = findViewById(R.id.ivEtkinlikResmi);

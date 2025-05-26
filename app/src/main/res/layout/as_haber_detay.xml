@@ -37,23 +37,30 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Resim (Görünürlük sonradan ayarlanacak) -->
+        <!-- Resim (ZORUNLU) -->
         <ImageView
-            android:id="@+id/ivDuyuruResim"
+            android:id="@+id/ivHaberResimm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:maxHeight="300dp"
-            android:layout_marginBottom="16dp"
-            android:visibility="gone" />
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tvAciklama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#B3B0B0"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
 
         <!-- Açıklama ve Tarih -->
         <TextView
             android:id="@+id/tvBaslikHaber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#B3B0B0"
+            android:textColor="#6A6A6A"
             android:textSize="16sp"
             android:layout_marginBottom="16dp" />
 
