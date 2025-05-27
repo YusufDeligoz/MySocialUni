@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <!-- Permissions (must be outside <application>) -->
+
+    <!-- İzinler -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -20,19 +20,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySocilUni"
         tools:targetApi="31">
-        <activity
-            android:name=".ShowProjectActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EventDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddEventActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddProjectActivity"
-            android:exported="false" />
 
+        <!-- Başlangıç ekranı -->
+        <activity
+            android:name=".İntroActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Giriş/Kayıt ekranları -->
+        <activity android:name=".LoginActivity" android:exported="false" />
+        <activity android:name=".RegisterActivity" android:exported="false" />
+
+        <!-- Ana sayfa (fragment yapılı ekranlar) -->
+        <activity android:name=".MainActivity" android:exported="false" />
+
+        <!-- Diğer ekranlar -->
+        <activity android:name=".ShowProjectActivity" android:exported="false" />
+        <activity android:name=".EventDetailActivity" android:exported="false" />
+        <activity android:name=".AddEventActivity" android:exported="false" />
+        <activity android:name=".AddProjectActivity" android:exported="false" />
+        <activity android:name=".EditProfileActivity" android:exported="false" />
+        <activity android:name=".ProjectRequestsActivity" android:exported="false" />
+        <activity android:name=".RequestDetailActivity" android:exported="false" />
+        <activity android:name=".ASYemekhaneActivity" android:exported="false" />
+        <activity android:name=".ASAkademikTakvimActivity" android:exported="false" />
+        <activity android:name=".ASHaberlerActivity" android:exported="false" />
+        <activity android:name=".ProfileMenuActivity" android:exported="false" />
+        <activity android:name=".ASKulüplerActivity" android:exported="false" />
+        <activity android:name=".ASTanıtımActivity" android:exported="false" />
+        <activity android:name=".ASDuyuruDetayActivity" android:exported="false" />
+        <activity android:name=".ASHaberDetayActivity" android:exported="false" />
+
+        <!-- Dosya paylaşımı için FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -41,31 +64,8 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
-        </provider> <!-- Your Activities -->
-        <activity
-            android:name=".EditProfileActivity"
-            android:exported="false" />
+        </provider>
 
-        <activity android:name=".ProjectRequestsActivity" />
-        <activity android:name=".RequestDetailActivity" />
-        <activity android:name=".ASYemekhaneActivity" />
-        <activity android:name=".ASAkademikTakvimActivity" />
-        <activity android:name=".ASHaberlerActivity" />
-        <activity android:name=".ProfileMenuActivity" />
-        <activity android:name=".ASKulüplerActivity" />
-        <activity android:name=".ASTanıtımActivity" />
-        <activity android:name=".ASDuyuruDetayActivity" />
-        <activity android:name=".ASHaberDetayActivity" />
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
